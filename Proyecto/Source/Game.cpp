@@ -233,10 +233,10 @@ void CGame::JugandoPintar(){
 	if (vida <= CERO)
 		estadoJuego = ESTADO_TERMINANDO;
 
-	nave->Pintar();
+	nave->Draw();
 	for (int i = 0; i < nivel[nivelActual].Enemigos_VisiblesAlMismoTiempo; i++)
 	{
-		enemigoArreglo[i]->Pintar();
+		enemigoArreglo[i]->Draw();
 		enemigoArreglo[i]->AutoDisparar(nivel[nivelActual].Enemigo_VelocidadBala);
 	}
 }
@@ -322,7 +322,7 @@ void CGame::MenuPintar()
 	menuFondo->Draw();
 	textoTitulo->TranslateXYDraw(WIDTH_SCREEN / 8, 0);
 
-	textoNombre->TranslateXYZ( WIDTH_SCREEN / 3, 450, 0.f);//570
+	textoNombre->TranslateXY( WIDTH_SCREEN / 3, 450);//570
 textoNombre->ScaleXYZ(90.f,90.f,90.f); //modificamos para que se viera mas grande
 textoNombre->RotateXYZ(1.f, 1.f, 1.f); // la rotacion del cubo
 	textoNombre->Draw();
