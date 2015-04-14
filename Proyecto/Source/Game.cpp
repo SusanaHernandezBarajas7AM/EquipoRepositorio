@@ -68,9 +68,18 @@ void CGame::CargandoObjetos()
 }
 // Con esta función eliminaremos todos los elementos en pantalla
 void CGame::Finalize(){
-	delete(nave);
-	
-	SDL_Quit();
+	delete menuFondo;
+	delete textoTitulo;
+	delete textoNombre;
+	delete textoOpcion1;
+	delete textoOpcion2;
+	delete textoOpcion1Sel;
+	delete textoOpcion2Sel;
+	delete nave;
+	delete jugandoFondo;
+	delete ganasteFondo;
+	delete perdisteFondo;
+	openGlImplement.QuitShaders();
 }
 
 bool CGame::Start()
@@ -109,19 +118,11 @@ bool CGame::Start()
 			JugandoPintar();
 			break;
 		case Estado::ESTADO_FINALIZANDO:
-			estadoJuego = Estado::ESTADO_ESPERANDO;
-			salirJuego = false;
-			openGlImplement.QuitShaders();
-			SDL_Quit();
-
+			salirJuego = true;
 			break;
 		case Estado::ESTADO_TERMINANDO:
 			TerminadoPintar();
 			TerminadoActualizar();
-			break;
-
-		case Estado::ESTADO_ESPERANDO:
-
 			break;
 		};
 
@@ -323,8 +324,6 @@ void CGame::MenuPintar()
 	textoTitulo->TranslateXYDraw(WIDTH_SCREEN / 8, 0);
 
 	textoNombre->TranslateXY( WIDTH_SCREEN / 3, 450);//570
-textoNombre->ScaleXYZ(90.f,90.f,90.f); //modificamos para que se viera mas grande
-textoNombre->RotateXYZ(1.f, 1.f, 1.f); // la rotacion del cubo
 	textoNombre->Draw();
 
 	textoOpcion1->TranslateXYDraw(320, 220);
