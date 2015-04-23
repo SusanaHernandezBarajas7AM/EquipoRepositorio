@@ -140,6 +140,14 @@ void Sprite::CreateTextures(char* name){
 		translate_z = z;
 	}
 
+	void Sprite::TranslateY(GLfloat y){
+		translate_y = y;
+	}
+
+	void Sprite::TranslateX(GLfloat x){
+		translate_x = x;
+	}
+
 	void Sprite::TranslateXYDraw(GLfloat x, GLfloat y){
 		translate_x = x;
 		translate_y = y;
