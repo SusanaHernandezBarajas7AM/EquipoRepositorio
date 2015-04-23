@@ -122,6 +122,7 @@ void Sprite::CreateTextures(char* name){
 
 	void Sprite::Draw(){
 		openGlImplement->Draw(vertexBufferObject, indexBufferObject, textureBufferObject, textureObject[0], translate_x, translate_y, translate_z, rotate_x,rotate_y,rotate_z,scale_x,scale_y,scale_z, numero_vertices);
+		
 	}
 
 	void Sprite::TranslateXYZ(GLfloat x, GLfloat y, GLfloat z){

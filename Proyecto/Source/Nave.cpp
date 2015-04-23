@@ -64,6 +64,8 @@ void Nave::Draw()
 {
 	if (visible){
 		nave->Draw();
+		nave->ScaleXYZ(30.f, 30.f, 30.f);
+		
 		for (int i = 0; i < MAXIMO_DE_BALAS; i++)
 		{
 			bala[i]->Draw();
@@ -75,6 +77,7 @@ void Nave::Draw()
 
 			case NAVE_ENEMIGA:
 				bala[i]->MoverArribaAbajo(10);
+				
 				break;
 			}
 		}
