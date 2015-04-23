@@ -63,8 +63,11 @@ void Nave::Disparar(int balas)
 void Nave::Draw()
 {
 	if (visible){
+		nave->ScaleXYZ(40.f, 40.f, 40.f);
+		nave->TranslateZ(-2.f);
+		//nave->TranslateXYZ(2.f, -2.f, 2.f);
 		nave->Draw();
-		nave->ScaleXYZ(30.f, 30.f, 30.f);
+		
 		
 		for (int i = 0; i < MAXIMO_DE_BALAS; i++)
 		{
@@ -77,6 +80,7 @@ void Nave::Draw()
 
 			case NAVE_ENEMIGA:
 				bala[i]->MoverArribaAbajo(10);
+
 				
 				break;
 			}
