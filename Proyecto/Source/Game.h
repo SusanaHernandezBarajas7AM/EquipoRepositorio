@@ -25,7 +25,21 @@ public:
 	};
 
 
-private:
+//private:
+//	void CargandoObjetos();
+//	void IniciandoVideo();
+//	void MoverEnemigo();
+//	void MenuPintar();
+//	void MenuActualizar();
+//	void JugandoPintar();
+//	void JugandoActualizar();
+//	void TerminadoPintar();
+//	void TerminadoActualizar();
+//	bool LimitePantalla(Sprite * objeto, int bandera);
+//	void InicializandoStage();
+//	void IniciarEnemigo();
+//	void IniciarNave();
+	GLfloat Translate_menu_x;
 	void CargandoObjetos();
 	void IniciandoVideo();
 	void MoverEnemigo();
@@ -40,8 +54,12 @@ private:
 	void IniciarEnemigo();
 	void IniciarNave();
 
-	//GLfloat animacion_menu_x;
-	//GLfloat movimiento_menu_x;
+	//GLfloat animacion_menu_x; ////cambio
+	//GLfloat movimiento_jugando_x; ////cambio
+	//GLfloat movimiento_fondojugando_x;
+	//GLfloat translate_jugando_x;
+	/*GLfloat JugandoFondo;*/
+	
 	
 	Uint8 *keys;//Esta variable nos servira para ver si determinadas teclas estan o no pulsadas
 	SDL_Event event;//La variable event de tipo evento de SDL nos servira para motorizar

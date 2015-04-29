@@ -18,7 +18,7 @@ Nave::Nave(OpenGlImplement* openGlImplement, char*rutaImagen, int x, int y, int 
 	}
 	balaVisible = 0;
 	visible = true;
-	colision = false;
+	colision = true; //false
 	this->tipoNave = tipoNave;
 }
 
@@ -70,17 +70,12 @@ void Nave::Draw()
 			switch (tipoNave)
 			{
 			case NAVE_PROPIA:
-				nave->ScaleXYZ(10.f, 10.f, 10.f);
-
-				
-				bala[i]->MoverArribaAbajo(10);
+				nave->ScaleXYZ(30.f, 30.f, 30.f);
+				bala[i]->MoverArribaAbajo(-10);
 				break;
 
 			case NAVE_ENEMIGA:
-				nave->ScaleXYZ(20.f, 20.f, -30.f);
-				
-				
-				
+				nave->ScaleXYZ(-30.f, -30.f, 30.f);
 				bala[i]->MoverArribaAbajo(10);
 
 				
